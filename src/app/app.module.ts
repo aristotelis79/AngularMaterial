@@ -6,8 +6,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
+  { path: 'contactmanager', loadChildren: () => import('./contactmanager/contantmanager.module').then(m => m.ContantmanagerModule)},
   { path: 'demo', loadChildren: () => import('./demo/demo.module').then(m => m.DemoModule)},
-  { path: '**', redirectTo: 'demo'}
+  { path: '**', redirectTo: 'contactmanager'}
 ];
 
 @NgModule({
