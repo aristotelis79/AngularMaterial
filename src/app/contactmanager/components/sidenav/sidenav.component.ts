@@ -8,17 +8,16 @@ const SMALL_WIDTH_BREAKPOINT = 720;
   styleUrls: ['./sidenav.component.scss']
 })
 export class SidenavComponent implements OnInit {
-  isScreenSmall: boolean;
+  public isScreenSmall: boolean;
 
   constructor(private breakpointObserver: BreakpointObserver) { }
 
   ngOnInit(): void {
     this.breakpointObserver
-    //.observe([Breakpoints.XSmall ]) //deafults
-    .observe([`( max-width: ${SMALL_WIDTH_BREAKPOINT}px `])
-    .subscribe((state: BreakpointState) => {
-      this.isScreenSmall = state.matches;
-    });
+      .observe([`(max-width: ${SMALL_WIDTH_BREAKPOINT}px)`]) //or.observe([Breakpoints.XSmall ]) //deafults
+      .subscribe((state: BreakpointState) => {
+        this.isScreenSmall = state.matches;
+      });
   }
 
 }
