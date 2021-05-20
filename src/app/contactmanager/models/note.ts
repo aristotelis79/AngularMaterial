@@ -1,4 +1,4 @@
-export class Node {
+export class Note {
     id: number;
     title: string;
     date: Date;
