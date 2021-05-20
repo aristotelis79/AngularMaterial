@@ -12,9 +12,11 @@ const SMALL_WIDTH_BREAKPOINT = 720;
   templateUrl: './sidenav.component.html',
   styleUrls: ['./sidenav.component.scss']
 })
+
 export class SidenavComponent implements OnInit {
   public isScreenSmall: boolean;
   isDarkTheme: boolean;
+  direction = 'ltr';
 
   users: Observable<User[]>;
 
@@ -51,6 +53,10 @@ export class SidenavComponent implements OnInit {
 
   toogleTheme() {
     this.isDarkTheme = !this.isDarkTheme;
+  }
+
+  toggleDir() {
+    this.direction = this.direction === 'ltr' ? 'rtl' : 'ltr';
   }
 
 }
